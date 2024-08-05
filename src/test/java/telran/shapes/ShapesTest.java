@@ -29,4 +29,31 @@ void canvasTest() {
     assertEquals(22, canvas.perimeter());
     assertEquals(15, canvas.square());
 }
+
+@Test
+void countTest() {
+    //TODO
+    //test of the method count of the class Canvas
+    Canvas canvas = new Canvas();
+    Canvas canvasTotal = new Canvas();
+    Rectangle rectangle = new Rectangle(2, 3);
+    Square square = new Square(3);
+    Square square1 = new Square(3);
+    Square square2 = new Square(3);
+    canvasTotal.addShape(rectangle);
+    canvasTotal.addShape(square);
+    canvas.addShape(square1);
+    canvas.addShape(square2);
+    canvasTotal.addShape(canvas);
+    assertEquals(5, canvasTotal.count());
+
+    Square square4 = new Square(3);
+    Square square5 = new Square(3);
+    Canvas canvas2 = new Canvas();
+    canvas2.addShape(square4);
+    canvas2.addShape(square5);
+    canvas.addShape(canvas2);
+    assertEquals(8, canvasTotal.count());
+    
+}
 }
