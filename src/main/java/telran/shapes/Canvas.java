@@ -41,9 +41,7 @@ public class Canvas implements Shape {
         for (int i = 0; i < shapes.length; i++) {
            if(shapes[i] instanceof Canvas) {
             Canvas current = (Canvas) shapes[i];
-            for(int j = 0; j < current.shapes.length; j++) {
-                count += 1;
-            }
+            count = count + current.count();
            }
             count += 1;
         }
